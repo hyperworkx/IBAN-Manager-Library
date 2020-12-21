@@ -21,3 +21,17 @@ table.ini can be found here: https://github.com/adrenaline96/IBAN-Manager-Librar
 
 
 Usage examples: https://pastebin.com/ymtuRTfH
+
+
+using IBAN_Manager;
+ 
+            //table.ini can be had here https://github.com/adrenaline96/IBAN-Manager-Library/blob/master/table.ini
+            IBANManager ibm = new IBANManager("RO00AAAA1B31007593840000");  //object with artificial IBAN (00 check digits)
+ 
+            string ibanWithCheckDigits = ibm.GenerateValidIban(); //the valid IBAN with valid check digits will be generated
+ 
+            IBANManager ibm2 = new IBANManager("RO49AAAA1B31007593840000"); 
+ 
+            string ibanStatus = ibm2.CheckIban();  //checks if the IBAN is valid, ibanStatus will be "Invalid" or "OK"
+ 
+            string ibanCode = ibm2.GetIban(); //returns IBAN code from the object
